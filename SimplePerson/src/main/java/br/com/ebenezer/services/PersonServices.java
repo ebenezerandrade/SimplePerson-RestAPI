@@ -1,8 +1,6 @@
 package br.com.ebenezer.services;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,12 +55,6 @@ public class PersonServices {
 	public Person findById(Long id) {
 		
 		logger.info("Finding one person");
-		
-		Person person = new Person();
-		person.setFirstName("Ebenezer");
-		person.setLastName("Andrade");
-		person.setAddress("Brasília - Distrito Federal - Brazil");
-		person.setGender("Male");
 		
 		return repository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("No records found for this ID!"));
