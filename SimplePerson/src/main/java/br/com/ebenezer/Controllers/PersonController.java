@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.ebenezer.data.vo.v1.PersonVO;
+import br.com.ebenezer.data.vo.v2.PersonVO2;
 import br.com.ebenezer.services.PersonServices;
 
 @RestController
@@ -43,6 +44,14 @@ public class PersonController {
 	public PersonVO create(@RequestBody PersonVO person) {
 		
 		return service.create(person);
+	}
+	
+	@PostMapping(value = "/v2",
+			consumes = MediaType.APPLICATION_JSON_VALUE,
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public PersonVO2 createv2(@RequestBody PersonVO2 person) {
+		
+		return service.createV2(person);
 	}
 	
 	@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE,
