@@ -18,7 +18,7 @@ import br.com.ebenezer.data.vo.v1.PersonVO;
 import br.com.ebenezer.services.PersonServices;
 
 @RestController
-@RequestMapping(value = "/person")
+@RequestMapping(value = "/api/person/v1")
 public class PersonController {
 	
 	@Autowired
